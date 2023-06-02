@@ -1,30 +1,30 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
+
+import AlcoholCardsList from "./Components/AlcoholCardsList/AlcoholCardsList";
 
 function App() {
-  const [drinks, setDrinks] = useState([]);
 
-  const getDrinks = async () => {
-    const url = "https://api.punkapi.com/v2/beers?page=1&per_page=10";
+
+  const [alcoholList, setList] = useState([]);
+
+  const getList = async () => {
+    const url = "http://localhost:8080/list";
     const result = await fetch(url);
-    const data = await result.json();
-    setDrinks(data);
+    const list = await result.json();
+    setList(list);
   };
 
+  console.log(alcoholList);
+
   useEffect(() => {
-    getDrinks();
+    getList();
   }, []);
 
-  return (
-    <div className="App">
-      {drinks.map((drink) => (
-        <div key={drink.id}>
-          <h2>{drink.name}</h2>
-          <p>{drink.tagline}</p>
-          <p>{drink.description}</p>
-        </div>
-      ))}
-    </div>
-  );
+  return <div className="App">
+    
+    <AlcoholCardsList alcoholList={alcoholList}/>
+  </div>;
 }
 
 export default App;
+
