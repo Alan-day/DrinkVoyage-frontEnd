@@ -1,10 +1,12 @@
 import React from "react";
 import "./AlcoholCardsList.scss";
+import AlcoholCard from "../AlcoholCard/AlcoholCard";
+import data from "../../Resources/beers.js";
 
-const AlcoholCardsList = (props) => {
-  const { alcoCards } = props;
+const AlcoholCardsList = () => {
 
-  const cardList = alcoCards.map((card) => {
+
+  const alcoholCards = data.map((card) => {
     return (
       <AlcoholCard
         name={card.name}
@@ -12,11 +14,12 @@ const AlcoholCardsList = (props) => {
         description={card.description}
         origin={card.origin}
         id={card.id}
+        key={card.id} // Add a unique key prop when mapping over an array of components
       />
     );
   });
 
-  return <div>AlcoholCardsList</div>;
+  return <div>{alcoholCards}</div>;
 };
 
 export default AlcoholCardsList;

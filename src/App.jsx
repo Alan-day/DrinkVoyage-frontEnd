@@ -1,30 +1,23 @@
 import React, { useEffect, useState } from "react";
 
 import AlcoholCardsList from "./Components/AlcoholCardsList/AlcoholCardsList";
-
+import data from "./Resources/beers.js";
 function App() {
+  const [alcoholList, setList] = useState(data);
 
+  // const getList = async () => {
+  //   const url = "http://localhost:8080/list";
+  //   const result = await fetch(url);
+  //   const list = await result.json();
+  //   setList(list);
+  // };
 
-  const [alcoholList, setList] = useState([]);
+  // useEffect(() => {
+  //   getList();
+  // }, []);
+  console.log( data);
 
-  const getList = async () => {
-    const url = "http://localhost:8080/list";
-    const result = await fetch(url);
-    const list = await result.json();
-    setList(list);
-  };
-
-  console.log(alcoholList);
-
-  useEffect(() => {
-    getList();
-  }, []);
-
-  return <div className="App">
-    
-    <AlcoholCardsList alcoholList={alcoholList}/>
-  </div>;
+  return <div className="App">{<AlcoholCardsList />}</div>;
 }
 
 export default App;
-
