@@ -1,7 +1,7 @@
 import React from "react";
 import "./AlcoholCardsList.scss";
 import AlcoholCard from "../AlcoholCard/AlcoholCard";
-import data from "../../Resources/beers.js";
+
 
 const AlcoholCardsList = (props) => {
   const { data } = props;
