@@ -3,8 +3,8 @@ import "./AlcoholCardsList.scss";
 import AlcoholCard from "../AlcoholCard/AlcoholCard";
 import data from "../../Resources/beers.js";
 
-const AlcoholCardsList = () => {
-
+const AlcoholCardsList = (props) => {
+  const { data } = props;
 
   const alcoholCards = data.map((card) => {
     return (
@@ -14,7 +14,7 @@ const AlcoholCardsList = () => {
         description={card.description}
         origin={card.origin}
         id={card.id}
-        key={card.id} // Add a unique key prop when mapping over an array of components
+        key={card.id}
       />
     );
   });
