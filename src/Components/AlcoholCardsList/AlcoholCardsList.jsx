@@ -2,7 +2,6 @@ import React from "react";
 import "./AlcoholCardsList.scss";
 import AlcoholCard from "../AlcoholCard/AlcoholCard";
 
-
 const AlcoholCardsList = (props) => {
   const { data } = props;
 
@@ -19,7 +18,7 @@ const AlcoholCardsList = (props) => {
     );
   });
 
-  return <div>{alcoholCards}</div>;
+  return <div className="cards-container">{alcoholCards}</div>;
 };
 
 export default AlcoholCardsList;

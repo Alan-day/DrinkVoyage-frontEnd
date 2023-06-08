@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import AlcoholCardsList from "./Components/AlcoholCardsList/AlcoholCardsList";
 import Searchbox from "./Components/Searchbox/Searchbox";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import CreateAlcoholCard from "./Components/CreateAlcoholCard/CreateAlcoholCard";
 import Navbar from "./Components/Navbar/Navbar";
 import "./App.scss";
 
@@ -33,32 +34,24 @@ function App() {
     <Router>
       <div className="App">
         <Navbar />
-        <Searchbox handleInput={handleSearch} searchTerm={searchTerm} />
         <div className="card-container">
-          {/* 
-do it in AlcoholCardList
-        {alcoholList.map((card, index) => {
-          return (
-            <>
-              <h3
-                className="mobile-table-header"
-                key={card.id + index}
-              >
-                Staff 0{card.category}
-              </h3>
-              {staff.resources.map((resource, index) => {
-                return (
-                  <MobileNavButton key={index} name={resource.resourceName} />
-                );
-              })}
-            </>
-          );
-        })} */}
-        </div>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <Searchbox
+                    handleInput={handleSearch}
+                    searchTerm={searchTerm}
+                  />
+                  <AlcoholCardsList data={filteredAlcohol} />
+                </>
+              }
+            />
 
-        <Routes>
-          {/* <Route path="/create" element={<CreateAlcoholCard />} /> */}
-        </Routes>
+            <Route path="/createDrink" element={<CreateAlcoholCard />} />
+          </Routes>
+        </div>
       </div>
     </Router>
   );
