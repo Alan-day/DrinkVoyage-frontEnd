@@ -33,8 +33,9 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar />
+      
         <div className="card-container">
+        <Navbar />
           <Routes>
             <Route
               path="/"

@@ -3,7 +3,6 @@ import "./CreateAlcoholCard.scss";
 import { useNavigate } from "react-router-dom";
 
 const CreateAlcoholCard = () => {
-
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -20,7 +19,7 @@ const CreateAlcoholCard = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault(); // Prevent the default form submission
-  
+
     const result = await fetch("http://localhost:8080/createDrink", {
       method: "POST",
       headers: {
@@ -28,14 +27,11 @@ const CreateAlcoholCard = () => {
       },
       body: JSON.stringify(formData), // Use formData instead of drink
     });
-  
+
     if (result.ok) {
       alert("Drink added");
       const drink = await result.json();
       navigate("/");
-    } else {
-      const message = await result.text();
-      alert(message);
     }
   };
 
@@ -50,7 +46,6 @@ const CreateAlcoholCard = () => {
             value={formData.name}
             onChange={handleChange}
           />
-          
         </label>
         <label>
           Description:
