@@ -1,1 +1,26 @@
-/*# sourceMappingURL=AlcoholCard.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Diphylleia&family=Indie+Flower&family=Nunito:ital,wght@1,1000&display=swap");
+.alco-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 300px;
+  height: 400px;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 15px;
+  margin: 10px;
+}
+.alco-card__name {
+  font-family: "Nunito", "sans-serif";
+}
+.alco-card__category {
+  font-family: "Bebas Neue", "sans-serif";
+}
+.alco-card__description {
+  font-family: "Diphylleia", "sans-serif";
+  font-weight: 700;
+}
+.alco-card__origin {
+  font-family: "Bebas Neue", "sans-serif";
+}/*# sourceMappingURL=AlcoholCard.css.map */

@@ -1,1 +1,5 @@
-/*# sourceMappingURL=AlcoholCardsList.css.map */
+.card-container {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+}/*# sourceMappingURL=AlcoholCardsList.css.map */

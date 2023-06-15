@@ -7,14 +7,16 @@ const AlcoholCardsList = (props) => {
 
   const alcoholCards = data.map((card) => {
     return (
-      <AlcoholCard
-        name={card.name}
-        category={card.category}
-        description={card.description}
-        origin={card.origin}
-        id={card.id}
-        key={card.id}
-      />
+      <div key={card.id}>
+        <h1>{card.originCountry}</h1>
+        <AlcoholCard
+          name={card.name}
+          category={card.category}
+          description={card.description}
+          originCountry={card.originCountry}
+          key={card.id}
+        />
+      </div>
     );
   });
 
