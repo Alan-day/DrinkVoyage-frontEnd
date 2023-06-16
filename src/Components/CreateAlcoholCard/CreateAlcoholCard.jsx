@@ -25,7 +25,7 @@ const CreateAlcoholCard = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(formData), // Use formData instead of drink
+      body: JSON.stringify(formData), 
     });
 
     if (result.ok) {

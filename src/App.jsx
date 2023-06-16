@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CreateAlcoholCard from "./Components/CreateAlcoholCard/CreateAlcoholCard";
 import Navbar from "./Components/Navbar/Navbar";
 import "./App.scss";
+import WelcomeBanner from "./Components/WelcomeBanner/WelcomeBanner";
 
 function App() {
   const [alcoholList, setAlcoholList] = useState([]);
@@ -33,24 +34,29 @@ function App() {
   return (
     <Router>
       <div className="App">
-      
+        <WelcomeBanner/>
+      <Navbar />
+      <Searchbox
+                    handleInput={handleSearch}
+                    searchTerm={searchTerm}
+                  />
         <div className="card-container">
-        <Navbar />
+    
           <Routes>
             <Route
               path="/"
               element={
                 <>
-                  <Searchbox
-                    handleInput={handleSearch}
-                    searchTerm={searchTerm}
-                  />
+            
                   <AlcoholCardsList data={filteredAlcohol} />
                 </>
               }
             />
 
             <Route path="/createDrink" element={<CreateAlcoholCard />} />
+
+          
+
           </Routes>
         </div>
       </div>

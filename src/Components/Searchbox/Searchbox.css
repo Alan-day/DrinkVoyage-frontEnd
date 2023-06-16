@@ -1,1 +1,4 @@
-/*# sourceMappingURL=Searchbox.css.map */
+.search-box {
+  display: flex;
+  justify-content: center;
+}/*# sourceMappingURL=Searchbox.css.map */
