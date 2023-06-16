@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+
 import "./CreateAlcoholCard.scss";
 import { useNavigate } from "react-router-dom";
 import Form from "../Form/Form";
@@ -7,8 +7,7 @@ const CreateAlcoholCard = () => {
 
 
   const handleSubmit = async newDrink => {
-    const { name, description, category, originCountry } = newDrink;
-    
+ 
 
     const result = await fetch("http://localhost:8080/createDrink", {
       method: "POST",
@@ -28,7 +27,7 @@ const CreateAlcoholCard = () => {
 
   return (
     <section className="create-drink">
-      <h2 className="create-drink__title">Create Drink</h2>
+    
       <Form
         handleSubmit={handleSubmit}
         defaultFormState={defaultFormState}
