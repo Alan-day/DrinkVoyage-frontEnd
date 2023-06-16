@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import AlcoholCardsList from "./Components/AlcoholCardsList/AlcoholCardsList";
 import Searchbox from "./Components/Searchbox/Searchbox";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import CreateAlcoholCard from "./Components/CreateAlcoholCard/CreateAlcoholCard";
+
+
 import Navbar from "./Components/Navbar/Navbar";
 import "./App.scss";
 import WelcomeBanner from "./Components/WelcomeBanner/WelcomeBanner";
+import CreateAlcoholCard from "./Components/CreateAlcoholCard/CreateAlcoholCard";
 
 function App() {
   const [alcoholList, setAlcoholList] = useState([]);
