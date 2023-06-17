@@ -12,12 +12,12 @@ const AlcoholCardsList = (props) => {
       );
 
       return (
-        <div key={originCountry}>
+        <div >
           <h1>{originCountry}</h1>
 
           {drinksFromOriginCountry.map((drink) => (
             <div key={drink.id}>
-              <Link to={`/list/edit/${drink.id}`}>
+              <Link key={drink.id} to={`/list/edit/${drink.id}`}>
                 <AlcoholCard
                   name={drink.name}
                   category={drink.category}

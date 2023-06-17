@@ -3,10 +3,9 @@ import "./AlcoholCard.scss";
 
 const AlcoholCard = (props) => {
   const { originCountry, name, category, description,id} = props;
-console.log(name);
-console.log(originCountry);
+
   return (
-    <div className="alco-card" key={id}>
+    <div className="alco-card">
       <h1 className="alco-card__name">{name}</h1>
       <p className="alco-card__description">Description: {description}</p>
       <p className="alco-card__category">category: {category}</p>

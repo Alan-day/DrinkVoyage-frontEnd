@@ -26,15 +26,17 @@ const EditAlcoholCard = () => {
   }, [id, location]);
 
   const handleUpdate = async (updatedDrink) => {
+
     try {
-      const { name, origin, category, description, id } = updatedDrink;
-      const url = `http://localhost:8080/list/drink/${id}`;
+
+      const { name, origin, category, description,id} = updatedDrink;
+      const url = `http://localhost:8080/list/edit/${id}`;
       const response = await fetch(url, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, origin, category, description }),
+        body: JSON.stringify({ name, origin, category, description, id }),
       });
       if (!response.ok) {
         throw new Error('Failed to update drink');
@@ -47,10 +49,11 @@ const EditAlcoholCard = () => {
       const message = 'Failed to update drink';
       alert(message);
     }
+
   };
 
   const handleDelete = async () => {
-    const result = await fetch(`http://localhost:8080/list/${id}`, {
+    const result = await fetch(`http://localhost:8080/list/edit/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -78,7 +81,7 @@ const EditAlcoholCard = () => {
           name={drink.name}
           category={drink.category}
           description={drink.description}
-          originCountry={drink.origin}
+          originCountry={drink.originCountry}
           id={drink.id}
           key={drink.id}
         />
