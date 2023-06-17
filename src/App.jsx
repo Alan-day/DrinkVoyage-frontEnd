@@ -8,6 +8,8 @@ import Navbar from "./Components/Navbar/Navbar";
 import "./App.scss";
 import WelcomeBanner from "./Components/WelcomeBanner/WelcomeBanner";
 import CreateAlcoholCard from "./Components/CreateAlcoholCard/CreateAlcoholCard";
+import EditAlcoholCard from "./Components/EditAlcoholCard/EditAlcoholCard";
+import EditDrink from "./Components/EditDrink/EditDrink";
 
 function App() {
   const [alcoholList, setAlcoholList] = useState([]);
@@ -56,7 +58,8 @@ function App() {
             />
 
             <Route path="/createDrink" element={<CreateAlcoholCard />} />
-
+            
+            <Route path="/list/edit/:id" element={<EditAlcoholCard />} />
           
 
           </Routes>
