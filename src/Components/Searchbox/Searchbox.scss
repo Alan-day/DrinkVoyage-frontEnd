@@ -1,4 +1,28 @@
 .search-box{
     display: flex;
     justify-content: center;
-}
+
+
+
+
+
+
+    &__selection{
+        
+        font-size: 20px;
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+
+        .item{
+            margin-right: 25px;
+        }
+        
+
+
+    }
+
+    }
+
+
+ 
