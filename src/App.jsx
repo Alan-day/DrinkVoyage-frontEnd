@@ -38,14 +38,14 @@ function App() {
 
   };
 
-const beerData = getBeer();
+
 
   const handleBeer = (event) => {
     if (event.target.value === "beer" && event.target.checked === true) {
-      getBeer()
+      getBeer();
      
     } else {
-      setAlcoholList(getList())
+  getList();
     }
   };
 
@@ -80,10 +80,8 @@ const beerData = getBeer();
               path="/list"
               element={<AlcoholCardsList data={filteredAlcohol} />}
             />
-              <Route
-              path="/list/beers"
-              element={<AlcoholCardsList data={beerData} />}
-            />
+      
+         
             <Route path="/createDrink" element={<CreateAlcoholCard />} />
             <Route path="/list/edit/:id" element={<EditAlcoholCard />} />
           </Routes>
