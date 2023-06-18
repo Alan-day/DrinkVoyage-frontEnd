@@ -39,6 +39,66 @@ function App() {
   };
 
 
+  const getWine = async () => {
+    
+    const url = "http://localhost:8080/list/wines";
+    const response = await fetch(url);
+    const listWine = await response.json();
+    setAlcoholList(listWine);
+ 
+
+};
+
+const getVodka = async () => {
+    
+  const url = "http://localhost:8080/list/vodkas";
+  const response = await fetch(url);
+  const listVodkas = await response.json();
+  setAlcoholList(listVodkas);
+
+
+};
+
+
+const getRakia = async () => {
+    
+  const url = "http://localhost:8080/list/rakias";
+  const response = await fetch(url);
+  const listRakias = await response.json();
+  setAlcoholList(listRakias);
+
+
+};
+
+const getWhiskey = async () => {
+    
+  const url = "http://localhost:8080/list/whiskeys";
+  const response = await fetch(url);
+  const listWhiskeys = await response.json();
+  setAlcoholList(listWhiskeys);
+
+
+};
+
+
+
+const getOthers = async () => {
+    
+  const url = "http://localhost:8080/list/others";
+  const response = await fetch(url);
+  const listOthers = await response.json();
+  setAlcoholList(listOthers);
+
+
+};
+
+
+
+
+
+
+
+
 
   const handleBeer = (event) => {
     if (event.target.value === "beer" && event.target.checked === true) {
@@ -49,7 +109,62 @@ function App() {
     }
   };
 
- 
+
+
+  const handleWine = (event) => {
+    if (event.target.value === "wine" && event.target.checked === true) {
+      getWine();
+     
+    } else {
+  getList();
+    }
+  };
+
+
+  const handleWhiskey = (event) => {
+    if (event.target.value === "whiskey" && event.target.checked === true) {
+      getWhiskey();
+     
+    } else {
+  getList();
+    }
+  };
+
+
+
+  const handleRakias = (event) => {
+    if (event.target.value === "rakia" && event.target.checked === true) {
+      getRakia();
+     
+    } else {
+  getList();
+    }
+  };
+
+
+  const handleVodkas = (event) => {
+    if (event.target.value === "vodka" && event.target.checked === true) {
+      getVodka();
+     
+    } else {
+  getList();
+    }
+  };
+
+
+  const handleOthers = (event) => {
+    if (event.target.value === "other" && event.target.checked === true) {
+      getOthers();
+     
+    } else {
+  getList();
+    }
+  };
+
+
+
+
+
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
@@ -60,6 +175,11 @@ function App() {
     return alcoholToLower.includes(searchTerm.toLowerCase());
   });
 
+
+
+
+
+
   return (
     <Router>
       <div className="App">
@@ -67,6 +187,13 @@ function App() {
         <Navbar  />
         <Searchbox
           setBeer={handleBeer}
+          setOther={handleOthers}
+          setVodka={handleVodkas}
+          setRakia={handleRakias}
+          setWine={handleWine}
+          setWhiskey={handleWhiskey}
+
+
           handleInput={handleSearch}
           searchTerm={searchTerm}
         />
