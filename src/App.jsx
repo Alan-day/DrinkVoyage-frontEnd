@@ -1,30 +1,55 @@
 import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AlcoholCardsList from "./Components/AlcoholCardsList/AlcoholCardsList";
 import Searchbox from "./Components/Searchbox/Searchbox";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-
 import Navbar from "./Components/Navbar/Navbar";
-import "./App.scss";
 import WelcomeBanner from "./Components/WelcomeBanner/WelcomeBanner";
 import CreateAlcoholCard from "./Components/CreateAlcoholCard/CreateAlcoholCard";
 import EditAlcoholCard from "./Components/EditAlcoholCard/EditAlcoholCard";
-import EditDrink from "./Components/EditDrink/EditDrink";
+import "./App.scss";
 
 function App() {
   const [alcoholList, setAlcoholList] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const getList = async () => {
-    const url = "http://localhost:8080/list";
-    const result = await fetch(url);
-    const list = await result.json();
-    setAlcoholList(list);
-  };
-
   useEffect(() => {
     getList();
+  
   }, []);
+
+  const getList = async () => {
+  
+      const url = "http://localhost:8080/list";
+      const response = await fetch(url);
+      const list = await response.json();
+      setAlcoholList(list);
+    
+  };
+
+
+
+  const getBeer = async () => {
+    
+      const url = "http://localhost:8080/list/beers";
+      const response = await fetch(url);
+      const listBeer = await response.json();
+      setAlcoholList(listBeer);
+   
+
+  };
+
+const beerData = getBeer();
+
+  const handleBeer = (event) => {
+    if (event.target.value === "beer" && event.target.checked === true) {
+      getBeer()
+     
+    } else {
+      setAlcoholList(getList())
+    }
+  };
+
+ 
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
@@ -38,30 +63,29 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <WelcomeBanner/>
-      <Navbar />
-      <Searchbox
-                    handleInput={handleSearch}
-                    searchTerm={searchTerm}
-                  />
+        <WelcomeBanner />
+        <Navbar  />
+        <Searchbox
+          setBeer={handleBeer}
+          handleInput={handleSearch}
+          searchTerm={searchTerm}
+        />
         <div className="card-container">
-    
           <Routes>
             <Route
               path="/"
-              element={
-                <>
-            
-                  <AlcoholCardsList data={filteredAlcohol} />
-                </>
-              }
+              element={<AlcoholCardsList data={filteredAlcohol} />}
             />
-
+                 <Route
+              path="/list"
+              element={<AlcoholCardsList data={filteredAlcohol} />}
+            />
+              <Route
+              path="/list/beers"
+              element={<AlcoholCardsList data={beerData} />}
+            />
             <Route path="/createDrink" element={<CreateAlcoholCard />} />
-            
             <Route path="/list/edit/:id" element={<EditAlcoholCard />} />
-          
-
           </Routes>
         </div>
       </div>

@@ -12,9 +12,6 @@ const Navbar = () => {
         Add drink to a list
       </Link>
 
-      <Link className="nav__item" to="/list/edit/${id}">
-        Edit drink
-      </Link>
     </div>
   );
 };
