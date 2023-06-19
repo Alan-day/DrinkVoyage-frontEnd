@@ -8,6 +8,10 @@ const Navbar = () => {
         Home
       </Link>
 
+
+      <Link className="nav__item" to="/list">
+       Browse drinks
+      </Link>
       <Link className="nav__item" to="/createDrink">
         Add drink to a list
       </Link>

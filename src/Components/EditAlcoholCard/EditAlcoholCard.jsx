@@ -87,17 +87,13 @@ const EditAlcoholCard = () => {
         />
         <div className="edit-drink__buttons">
           <button
-            className={
-              showForm
-                ? 'edit-drink__button'
-                : 'edit-drink__button edit-drink__button--secondary'
-            }
+      
             onClick={handleShowForm}
           >
             Update
           </button>
           <button
-            className="edit-drink__button edit-drink__button--secondary"
+      
             onClick={handleDelete}
           >
             Delete

@@ -7,6 +7,7 @@ import WelcomeBanner from "./Components/WelcomeBanner/WelcomeBanner";
 import CreateAlcoholCard from "./Components/CreateAlcoholCard/CreateAlcoholCard";
 import EditAlcoholCard from "./Components/EditAlcoholCard/EditAlcoholCard";
 import "./App.scss";
+import Homepage from "./Components/Homepage/Homepage";
 
 function App() {
   const [alcoholList, setAlcoholList] = useState([]);
@@ -181,40 +182,43 @@ const getOthers = async () => {
 
 
   return (
-    <Router>
-      <div className="App">
-        <WelcomeBanner />
-        <Navbar  />
-        <Searchbox
-          setBeer={handleBeer}
-          setOther={handleOthers}
-          setVodka={handleVodkas}
-          setRakia={handleRakias}
-          setWine={handleWine}
-          setWhiskey={handleWhiskey}
-
-
-          handleInput={handleSearch}
-          searchTerm={searchTerm}
+<Router>
+  <div className="App">
+    <WelcomeBanner />
+    <Navbar  />
+    <div className="card-container">
+      <Routes>
+        <Route
+          path="/"
+          element={<Homepage  />}
         />
-        <div className="card-container">
-          <Routes>
-            <Route
-              path="/"
-              element={<AlcoholCardsList data={filteredAlcohol} />}
-            />
-                 <Route
-              path="/list"
-              element={<AlcoholCardsList data={filteredAlcohol} />}
-            />
-      
-         
-            <Route path="/createDrink" element={<CreateAlcoholCard />} />
-            <Route path="/list/edit/:id" element={<EditAlcoholCard />} />
-          </Routes>
-        </div>
-      </div>
-    </Router>
+        <Route
+          path="/list"
+          element={
+            <>
+            <div className="card-container__search">
+              <Searchbox
+                setBeer={handleBeer}
+                setOther={handleOthers}
+                setVodka={handleVodkas}
+                setRakia={handleRakias}
+                setWine={handleWine}
+                setWhiskey={handleWhiskey}
+                handleInput={handleSearch}
+                searchTerm={searchTerm}
+              />
+              <AlcoholCardsList data={filteredAlcohol} />
+              </div>
+            </>
+          }
+        />
+        <Route path="/createDrink" element={<CreateAlcoholCard />} />
+        <Route path="/list/edit/:id" element={<EditAlcoholCard />} />
+      </Routes>
+    </div>
+  </div>
+</Router>
+
   );
 }
 
