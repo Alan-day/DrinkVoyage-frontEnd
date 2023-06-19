@@ -1,0 +1,21 @@
+@use "../../Styles/variables" as *;
+
+.welcome-container{
+
+background-color: #E7200D;
+
+
+&__heading{
+    display: flex;
+justify-content: center;
+font-family: $text-font;
+}
+
+&__paragraph{
+    font-family: $text-font;
+    font-weight: 800;
+    
+}
+
+
+}

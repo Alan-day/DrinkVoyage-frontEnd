@@ -14,7 +14,7 @@ const Searchbox = ({
   return (
     <>
       <form className="search-box">
-        <label className="search-box__label">Search by name:</label>
+        <label className="search-box__label">Search by name: </label>
         <input
           type="text"
           value={searchTerm}

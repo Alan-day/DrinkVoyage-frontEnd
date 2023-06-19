@@ -1,11 +1,22 @@
-.search-box{
+.search-box {
     display: flex;
     justify-content: center;
+    margin: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    outline: none;
+    width: 300px;
+    background-color: #ffffff;
+
+&__input{
 
 
-
-
-
+    border: none;
+    flex-grow: 1;
+    margin-right: 10px;
+}
 
     &__selection{
         
