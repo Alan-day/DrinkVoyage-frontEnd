@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Homepage.scss"
-
+import alcoBus from "../../Pictures/cartoon_bus.png";
 const Homepage = () => {
 
   return (
@@ -25,6 +25,13 @@ Drink Voyage also recognizes the importance of community and sharing experiences
 
 Whether you're a seasoned spirit explorer or a curious beginner, Drink Voyage offers an immersive and educational platform that celebrates the unique heritage and craftsmanship of European alcohols. Embark on a delightful voyage through the tastes and traditions of Europe, one sip at a time, only at Drink Voyage.
         </p>
+
+       <div className='welcome-container__picture-container'>
+        <img src={alcoBus} alt="bus" className='welcome-container__picture' />
+        </div> 
+
+
+
     </div>
 
   )
