@@ -1,17 +1,21 @@
 html,
 body,
 #root {
-  height: 100%;
+  height: 100vh;
   margin: 0;
+  padding: 0;
+  width: 100vw;
+  background-color: #1B1212;
 }
 
 .App {
   height: 100%;
+  width: 100vw;
 }
 
 .card-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
-

@@ -1,0 +1,36 @@
+@use "../../Styles/variables" as *;
+
+.welcome-container{
+
+background-color: #E7200D;
+padding: 30px;
+
+
+&__heading{
+    display: flex;
+justify-content: center;
+font-family: $text-font;
+padding-bottom: 20px;
+}
+
+&__paragraph{
+    font-family: $text-font;
+    font-weight: 800;
+    
+}
+
+
+&__picture-container{
+
+    display: flex;
+    justify-content: space-around;
+
+
+}
+
+&__picture{
+margin-top: 30px;
+    border-radius: 10px;
+}
+
+}
