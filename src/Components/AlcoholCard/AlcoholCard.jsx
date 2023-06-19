@@ -2,8 +2,8 @@ import React from "react";
 import "./AlcoholCard.scss";
 
 const AlcoholCard = (props) => {
-  const { originCountry, name, category, description,id} = props;
-
+  const { originCountry, name, category, description, drinkId} = props;
+console.log(props)
   return (
     <div className="alco-card">
       <h1 className="alco-card__name">{name}</h1>

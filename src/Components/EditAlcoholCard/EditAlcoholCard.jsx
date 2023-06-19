@@ -28,15 +28,15 @@ const EditAlcoholCard = () => {
   const handleUpdate = async (updatedDrink) => {
 
     try {
-
-      const { name, origin, category, description,id} = updatedDrink;
-      const url = `http://localhost:8080/list/edit/${id}`;
+    
+      const { name, origin, category, description,drinkId} = updatedDrink;
+      const url = `http://localhost:8080/list/edit/${drinkId}`;
       const response = await fetch(url, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, origin, category, description, id }),
+        body: JSON.stringify({ name, origin, category, description, drinkId }),
       });
       if (!response.ok) {
         throw new Error('Failed to update drink');
@@ -82,8 +82,8 @@ const EditAlcoholCard = () => {
           category={drink.category}
           description={drink.description}
           originCountry={drink.originCountry}
-          id={drink.id}
-          key={drink.id}
+          id={drink.drinkId}
+          key={drink.drinkId}
         />
         <div className="edit-drink__buttons">
           <button
