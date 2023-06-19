@@ -60,6 +60,23 @@ const Form = ({ defaultFormState, handleSubmit, formTitle}) => {
           value={drink.description}
           onInput={event => setDrink({ ...drink, description: event.target.value })}
         />
+
+<input
+          id="name"
+          className="form-container__input"
+          type="text"
+          placeholder="image link"
+          value={drink.flag}
+          onInput={event => setDrink({ ...drink, flag: event.target.value })}
+        />
+
+
+
+
+
+
+
+
         <button type="submit" className="form-container__button">
           Submit
         </button>

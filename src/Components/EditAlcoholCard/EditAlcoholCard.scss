@@ -1,6 +1,9 @@
 .edit-drink {
     &__title {
       margin: 1em auto;
+      color: white;
+      display: flex;
+      justify-content: center;
     }
   
     &__content {

@@ -29,6 +29,7 @@ const AlcoholCardsList = (props) => {
               originCountry={drink.originCountry}
               key={drink.drinkId}
               id={drink.drinkId} 
+              image={drink.flag}
             />
           </Link>
         ))}

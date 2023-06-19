@@ -30,14 +30,14 @@ const EditAlcoholCard = () => {
 
     try {
     
-      const { name, origin, category, description,drinkId} = updatedDrink;
+      const { name, originCountry, category, description,drinkId,flag} = updatedDrink;
       const url = `http://localhost:8080/list/edit/${drinkId}`;
       const response = await fetch(url, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, origin, category, description, drinkId }),
+        body: JSON.stringify({ name, originCountry, category, description, drinkId, flag}),
       });
       if (!response.ok) {
         throw new Error('Failed to update drink');
@@ -83,6 +83,7 @@ const EditAlcoholCard = () => {
           category={drink.category}
           description={drink.description}
           originCountry={drink.originCountry}
+          image = {drink.flag}
           id={drink.drinkId}
           key={drink.drinkId}
         />
