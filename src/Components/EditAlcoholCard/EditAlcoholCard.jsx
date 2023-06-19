@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import Form from '../Form/Form';
 import AlcoholCard from '../AlcoholCard/AlcoholCard';
+import "./EditAlcoholCard.scss"
 
 const EditAlcoholCard = () => {
   const { id } = useParams();

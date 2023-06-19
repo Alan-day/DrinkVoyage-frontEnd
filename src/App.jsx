@@ -172,7 +172,10 @@ const getOthers = async () => {
   };
 
   const filteredAlcohol = alcoholList.filter((alco) => {
-    const alcoholToLower = alco.name.toLowerCase();
+  const alcoholToLower = alco.name.toLowerCase();
+
+
+    
     return alcoholToLower.includes(searchTerm.toLowerCase());
   });
 
