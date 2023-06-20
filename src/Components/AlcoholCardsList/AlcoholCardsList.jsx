@@ -21,7 +21,7 @@ const AlcoholCardsList = (props) => {
       <div key={country}>
         <h1 className="country-heading">{country}</h1>
         {cardsForCountry.map((drink) => (
-          <Link key={drink.drinkId} to={`/list/edit/${drink.drinkId}`} style={{ textDecoration: 'none' }}>
+          <Link key={drink.drinkId} to={`/list/edit/${drink.drinkId}`} style={{ textDecoration: 'none'}}>
             <AlcoholCard
               name={drink.name}
               category={drink.category}

@@ -27,7 +27,7 @@ const Form = ({ defaultFormState, handleSubmit, formTitle}) => {
           id="name"
           className="form-container__input"
           type="text"
-          placeholder="name"
+    
           value={drink.name}
           onInput={event => setDrink({ ...drink, name: event.target.value })}
         />
@@ -37,7 +37,7 @@ const Form = ({ defaultFormState, handleSubmit, formTitle}) => {
           id="name"
           className="form-container__input"
           type="text"
-          placeholder="country"
+         
           value={drink.originCountry}
           onInput={event => setDrink({ ...drink, originCountry: event.target.value })}
         />
@@ -47,7 +47,7 @@ const Form = ({ defaultFormState, handleSubmit, formTitle}) => {
           id="name"
           className="form-container__input"
           type="text"
-          placeholder="category"
+         
           value={drink.category}
           onInput={event => setDrink({ ...drink, category: event.target.value })}
         />
@@ -56,16 +56,16 @@ const Form = ({ defaultFormState, handleSubmit, formTitle}) => {
           id="name"
           className="form-container__input"
           type="text"
-          placeholder="description"
+         
           value={drink.description}
           onInput={event => setDrink({ ...drink, description: event.target.value })}
         />
-
+  <label htmlFor="drink">Image link </label>
 <input
           id="name"
           className="form-container__input"
           type="text"
-          placeholder="image link"
+          
           value={drink.flag}
           onInput={event => setDrink({ ...drink, flag: event.target.value })}
         />

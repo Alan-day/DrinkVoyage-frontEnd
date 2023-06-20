@@ -15,21 +15,26 @@
     &__buttons {
       display: flex;
       justify-content: center;
-    }
-  
-    &__button {
-      margin: 2em 0;
-      display: inline-block;
-      background: #5828c7;
-      border: 1px solid #4f24b2;
-      padding: 0.5em 2em;
-      color: white;
-  
-      &--secondary {
-        border: 1px solid #4f24b2;
-        background-color: unset;
-        color: #4f24b2;
+
+      &-button{  
+        font-size: 16px;
+        font-weight: 600;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        background-color: #F2542D;
+
+        &:hover{
+
+          color: white;
+          cursor: pointer;
       }
+  }
+    
     }
+  
+
+    
   }
   

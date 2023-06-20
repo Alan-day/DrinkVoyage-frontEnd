@@ -88,13 +88,13 @@ const EditAlcoholCard = () => {
           key={drink.drinkId}
         />
         <div className="edit-drink__buttons">
-          <button
+          <button className='edit-drink__buttons-button'
       
             onClick={handleShowForm}
           >
             Update
           </button>
-          <button
+          <button className='edit-drink__buttons-button'
       
             onClick={handleDelete}
           >
