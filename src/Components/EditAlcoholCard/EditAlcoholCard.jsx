@@ -28,7 +28,7 @@ const EditAlcoholCard = () => {
 
   const handleUpdate = async (updatedDrink) => {
 
-    try {
+  
     
       const { name, originCountry, category, description,drinkId,flag} = updatedDrink;
       const url = `http://localhost:8080/list/edit/${drinkId}`;
@@ -45,14 +45,10 @@ const EditAlcoholCard = () => {
       const updated = await response.json();
       setDrink(updated);
       alert('Drink updated');
-    } catch (error) {
-      console.error(error);
-      const message = 'Failed to update drink';
-      alert(message);
-    }
 
-  };
+    } 
 
+  
   const handleDelete = async () => {
     const result = await fetch(`http://localhost:8080/list/edit/${id}`, {
       method: 'DELETE',
