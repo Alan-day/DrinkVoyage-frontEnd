@@ -32,4 +32,13 @@ font-family: $title-font;
     font-family: $category-font;
   }
 
+  &__image{
+
+    width: 60px;
+
+  }
+
+}
+.alco-card:hover {
+  color: red;
 }
