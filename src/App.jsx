@@ -171,14 +171,14 @@ const getOthers = async () => {
     setSearchTerm(event.target.value);
   };
 
+
+
+  
   const filteredAlcohol = alcoholList.filter((alco) => {
-  const alcoholToLower = alco.name.toLowerCase();
+  const alcoholToLower = alco.originCountry.toLowerCase();
 
-
-    
     return alcoholToLower.includes(searchTerm.toLowerCase());
   });
-
 
 
 

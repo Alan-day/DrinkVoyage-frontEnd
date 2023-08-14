@@ -1,22 +1,31 @@
+@use "../../Styles/variables" as *;
+
+
 .search-box {
+
     display: flex;
     justify-content: center;
     margin: 15px;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     font-size: 16px;
     outline: none;
-    width: 300px;
-    background-color: #ffffff;
+    width: 400px;
+   
 
-&__input{
+    &__input{
 
 
     border: none;
     flex-grow: 1;
-    margin-right: 10px;
-}
+    margin: 0px 10px;
+    padding: 3px;
+    font-size: 14px;
+
+    background-color: orange;
+    border-radius: 15px;
+            }
 
     &__selection{
         color: wheat;
@@ -31,6 +40,15 @@
         
 
 
+    }
+
+
+    &__label{
+        padding: 5px;
+        font-family: $fancy-font;
+        font-size: 24px;
+        font-weight: 800;
+        color: red;
     }
 
     }
